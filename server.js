@@ -4,7 +4,7 @@ let portInput = document.getElementById("port-input");
 async function getServerStatus() {
     const ip = ipInput.value;
     const port = portInput.value;
-    
+
     // Panggil API Minecraft
     const response = await fetch(`https://api.mcsrvstat.us/bedrock/3/${ip}:${port}`);
     // Uraikan respon JSON jadi objek javascript yang bisa kamu gunakan
@@ -13,30 +13,30 @@ async function getServerStatus() {
     if (data.online) {
         // Jika Server Online
         document.getElementById("server-status").innerHTML = `
-            <p class="card-text text-dark">
-                Server : ${data.motd.clean}<br>
-                IP : ${data.hostname}<br>
-                Port : ${data.port}<br>
-                Status : ONLINE<br>
-                Players : ${data.players.online} / ${data.players.max}<br>
-                Server Software : ${data.software}<br>
-                Version : ${data.version}<br>
-            </p>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closeModalAndRefresh()">Close</button>
-                <button href="minecraft:?addExternalServer=${data.motd.clean}|${ip}:${port}" class="btn btn-primary">Join Server</button>
-            </div>`;
-    } else {
+                                                            <p class="card-text text-dark">
+                                                                            Server : ${data.motd.clean}<br>
+                                                                                            IP : ${data.hostname}<br>
+                                                                                                            Port : ${data.port}<br>
+                                                                                                                            Status : ONLINE<br>
+                                                                                                                                            Players : ${data.players.online} / ${data.players.max}<br>
+                                                                                                                                                            Server Software : ${data.software}<br>
+                                                                                                                                                                            Version : ${data.version}<br>
+                                                                                                                                                                                        </p>
+                                                                                                                                                                                                    <div class="modal-footer">
+                                                                                                                                                                                                                    <button type="button" class="btn btn-secondary" onclick="closeModalAndRefresh()">Close</button>
+                                                                                                                                                                                                                                    <a href="minecraft://addExternalServer=${data.motd.clean}|${ip}:${port}" class="btn btn-primary">Join Server</a>
+                                                                                                                                                                                                                                                </div>`;
+    update} else {
         // Jika Server Offline
         document.getElementById("server-status").innerHTML = `
-            <p class="card-text text-dark">
-                Status : OFFLINE<br>
-                Server Software : ${data.software}<br>
-                Version : ${data.version}<br>
-            </p>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closeModalAndRefresh()">Close</button>
-            </div>`;
+                                                                                                                                                                                                                                                                                <p class="card-text text-dark">
+                                                                                                                                                                                                                                                                                                Status : OFFLINE<br>
+                                                                                                                                                                                                                                                                                                                Server Software : ${data.software}<br>
+                                                                                                                                                                                                                                                                                                                                Version : ${data.version}<br>
+                                                                                                                                                                                                                                                                                                                                            </p>
+                                                                                                                                                                                                                                                                                                                                                        <div class="modal-footer">
+                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-secondary" onclick="closeModalAndRefresh()">Close</button>
+                                                                                                                                                                                                                                                                                                                                                                                    </div>`;
     }
 
     // Show the modal
