@@ -15,10 +15,21 @@ Repository ini berisi tentang website yang dapat menampilkan status server Minec
 
 # Cara Menggunakan dan Menjalankan Website
 
+
+1. Buka website [cek-server.ahzanmc.my.id](https://cek-server.ahzanmc.my.id/)
+1. Pilih edisi minecraft
+2. Masukkan IP dan Port (untuk bedrock)
+3. Tunggu hasilnya
+
+# Cara Menggunakan dan Menjalankan Website (Localhost)
+
 1. Clone repository ini (Bisa download manual atau pakai git bash/terminal)
 2. Buka folder yang berisi repository ini
 3. lalu jalankan menggunakan extension Live Server pada VS Code
-4. Masukkan inputan IP dan Port pada server
+4. Buka localhost pada browser
+5. Pilih edisi minecraft
+6. Masukkan IP dan Port (untuk bedrock)
+7. Tunggu hasilnya
 
 Selengkapnya cek [disini](https://api.mcsrvstat.us/)
 
