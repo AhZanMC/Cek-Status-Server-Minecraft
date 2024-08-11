@@ -23,7 +23,7 @@ async function getServerStatus() {
             </p>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
-                <a href="minecraft://addExternalServer=${data.motd.clean}|${ip}" class="btn btn-primary">Join Server</a>
+                <a href="minecraft://addExternalServer=servername|${ip}" class="btn btn-primary">Join Server</a>
             </div>`;
     } else {
         // Jika Server Offline
