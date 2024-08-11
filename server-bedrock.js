@@ -14,6 +14,7 @@ async function getServerStatus() {
         // Jika Server Online
         document.getElementById("server-status").innerHTML = `
             <p class="card-text text-dark">
+                ${data.motd.html}<br>
                 Server : ${data.motd.clean}<br>
                 IP : ${data.hostname}<br>
                 Port : ${data.port}<br>
@@ -24,7 +25,7 @@ async function getServerStatus() {
             </p>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
-                <a href="minecraft://addExternalServer=servername|${ip}:${port}" class="btn btn-primary">Join Server</a>
+                <a href="minecraft:?addExternalServer=${data.motd.clean}|${ip}:${port}" class="btn btn-primary">Join Server</a>
             </div>`;
     } else {
         // Jika Server Offline
