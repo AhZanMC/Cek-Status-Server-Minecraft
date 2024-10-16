@@ -16,25 +16,28 @@
             <div class="card-body">
                 <h5 class="card-title">Cek Server Minecraft</h5>
                 <p class="card-text">Pilih Edisi Minecraft Terlebih Dahulu</p>
-                <a href="server-java.html" class="btn btn-primary">Java</a>
+                <a href="server-java.html" class="btn btn-success">Java</a>
                 <a href="server-bedrock.html" class="btn btn-primary">Bedrock</a>
-                <a onclick="credit()" class="btn btn-secondary">Credit</a>
+                <a href="https://saweria.co/AhZanMC" class="btn btn-info" target="_blank">Support</a>
+                <a href="https://youtu.be/dQw4w9WgXcQ?si=kub4uyq4VDGrJ4RP" class="btn btn-danger" target="_blank">Don't Click</a>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalHasil">Credit</button>
             </div>
         </div>
     </div>
 
     <!-- Scrollable modal -->
-    <div class="modal fade" id="modalCR" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal fade" id="ModalHasil" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-black" id="myModalLabel">Server Info</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title text-black" id="myModalLabel">Credit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
                 </div>
                 <div class="modal-body" id="server-status">
-                    <p class="card-text text-dark">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda necessitatibus ducimus odit. Alias totam vel doloremque reprehenderit saepe repellat laborum eveniet ducimus voluptas. In laudantium expedita repellendus ipsum perspiciatis magni.
-                    </p>
+                    <p>Creator : <a href="https://ahzanmc.my.id/bio-link">AhZanMC</a></p>
+                    <p>API : <a href="https://api.mcsrvstat.us">api.mcsrvstat.us</a></p>
+                    <p>Github : <a href="https://github.com/AhZanMC/Cek-Status-Server-Minecraft">Click Here</a></p>
+                    <blockquote>Makasih udah mampir</blockquote>
                 </div>
             </div>
         </div>
@@ -48,6 +51,16 @@
     <script>
         function credit() {
             alert('============\nCREDIT\n============\n\nCreator : AhZanMC\nAPI : api.mcsrvstat.us\nGithub : github.com/AhZanMC/Cek-Status-Server-Minecraft/\n\nMakasih udah mampir :)');
+        }
+        function closeModal() {
+            // Tutup modal atau Popup
+            var tutupModal = new bootstrap.Modal(document.getElementById('ModalHasil'));
+            tutupModal.hide();
+
+            setInterval(closeModal, 1000);
+
+            // Refresh halaman
+            window.location.reload();
         }
     </script>
 </body>
