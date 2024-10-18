@@ -1,6 +1,28 @@
 let ipInput = document.getElementById("ip-input");
 let portInput = document.getElementById("port-input");
 
+// Panggil Fungsi getServerStatus() saat tombol "Enter" ditekan
+document.addEventListener("DOMContentLoaded", function () {
+    const submitButton = document.querySelector('button[type="button"]');
+    
+    // Menjalankan fungsi saat tombol di klik
+    submitButton.addEventListener("click", getServerStatus);
+
+    // Menjalankan fungsi saat tekan "Enter" pada input IP
+    ipInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            getServerStatus();
+        }
+    });
+
+    // Menjalankan fungsi saat tekan "Enter" pada input Port
+    portInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            getServerStatus();
+        }
+    });
+});
+
 async function getServerStatus() {
     const ip = ipInput.value;
     const port = portInput.value;
@@ -13,6 +35,7 @@ async function getServerStatus() {
     if (data.online) {
         // Jika Server Online
         document.getElementById("server-status").innerHTML = `
+            <img src="https://api.mcsrvstat.us/icon/${ip}:${port}" alt="server_icon" height="64" width="64">
             <p class="card-text text-dark">
                 ${data.motd.html}<br>
                 Server : ${data.motd.clean}<br>
@@ -61,3 +84,14 @@ function closeModal() {
     // Refresh halaman
     window.location.reload();
 }
+
+// Checkbox Default Port
+let check = document.getElementById("default-port");
+let getPort = document.getElementById("port-input");
+check.addEventListener("change", function () {
+    if (check.checked) {
+        getPort.value = "19132";
+    } else {
+        getPort.value = "";
+    }
+});

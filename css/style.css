@@ -1,0 +1,33 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Form */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    color: #000;
+}
+
+/* Modal */
+.modal-header {
+    background-color: #f8f9fa;
+}
+
+.modal-body {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+.form-control,
+.form-label {
+    border-radius: 0.375rem;
+}
