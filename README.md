@@ -1,4 +1,6 @@
-## TENTANG REPOSITORY INI
+## CEK STATUS SERVER MINECRAFT
+
+[Changelog](Changelog.md) | [Cara Menggunakan](#cara-menggunakan) | [Creator](#creator)
 
 Repository ini berisi tentang website yang dapat menampilkan status server Minecraft itu aktif atau tidak dengan menggunakan API [Minecraft Server Status](https://mcsrvstat.us/)
 
@@ -6,22 +8,23 @@ Tujuan dibuatnya website ini adalah untuk mencari dan mengecek server apakah akt
 
 ## FITUR-FITUR
 - Dapat menampilkan informasi server kamu seperti IP, Port, Nama Server, Versi, dll
-- Pengguna dapat melakukan inputan ip dan port
+- Pengguna dapat melakukan inputan iop dan port
 - Jika server offline maka akan ditampikan pada sebuah popup
 - Tampilan yang simple dan mudah digunakan
 - Loading :v
 - Pakai Bootstrap :V
 - Tombol direct ke Minecraft langsung (Jadi user bisa join server tanpa masukin IP dan Port, dan ini khusus untuk server bedrock)
 
+## Cara Menggunakan
 
-## Cara Menggunakan dan Menjalankan Website
+### Cara Menggunakan Aplikasi ini di website (secara online)
 
 1. Buka website [cek-server.ahzanmc.my.id](https://cek-server.ahzanmc.my.id/)
 1. Pilih edisi minecraft
 2. Masukkan IP dan Port (untuk bedrock)
 3. Tunggu hasilnya
 
-## Cara Menggunakan dan Menjalankan Website (Localhost)
+### Cara Menggunakan dan Menjalankan Website (Localhost)
 
 1. Clone repository ini (Bisa download manual atau pakai git bash/terminal)
 2. Buka folder yang berisi repository ini

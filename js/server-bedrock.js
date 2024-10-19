@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Function getServerStatus()
 async function getServerStatus() {
     const ip = ipInput.value;
     const port = portInput.value;
@@ -37,7 +38,7 @@ async function getServerStatus() {
         document.getElementById("server-status").innerHTML = `
             <img src="https://api.mcsrvstat.us/icon/${ip}:${port}" alt="server_icon" height="64" width="64">
             <p class="card-text text-dark">
-                ${data.motd.html}<br>
+                ${data.motd.html} <button class="fa-regular fa-clipboard border border-0 copy-motd" data-motd="${data.motd.raw}"></button><br>
                 Server : ${data.motd.clean}<br>
                 IP : ${data.hostname}<br>
                 Port : ${data.port}<br>
@@ -50,6 +51,13 @@ async function getServerStatus() {
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
                 <a href="minecraft:?addExternalServer=${data.motd.clean}|${ip}:${port}" class="btn btn-primary">Join Server</a>
             </div>`;
+
+            // Fitur Copy MOTD
+            const copyButton = document.querySelector(".copy-motd");
+            copyButton.addEventListener("click", function () {
+                const motdText = this.getAttribute("data-motd");
+                copyToClipboard(motdText);
+            });
     } else {
         // Jika Server Offline
         document.getElementById("server-status").innerHTML = `
@@ -66,6 +74,15 @@ async function getServerStatus() {
     // Buka Modal atau Popup
     var bukaModal = new bootstrap.Modal(document.getElementById('ModalHasil'));
     bukaModal.show();
+}
+
+// Fungsi untuk menyalin teks ke clipboard
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        alert("Copied the MOTD: " + text);
+    }, function(err) {
+        console.error("Could not copy text: ", err);
+    });
 }
 
 // Panggil Fungsi getServerStatus()
@@ -91,7 +108,9 @@ let getPort = document.getElementById("port-input");
 check.addEventListener("change", function () {
     if (check.checked) {
         getPort.value = "19132";
+        getPort.readOnly = true;
     } else {
         getPort.value = "";
+        getPort.readOnly = false;
     }
 });
