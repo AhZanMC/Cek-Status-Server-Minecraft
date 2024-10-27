@@ -1,6 +1,10 @@
 # Changelog
 
-[Changelog](Changelog.md) | [Cara Menggunakan](#cara-menggunakan) | [Creator](#creator)
+[Home](README.md) | [Changelog](Changelog.md) | [Cara Menggunakan](README.md#cara-menggunakan) | [Creator](README.md#creator)
+
+### Patch Update (27/10/2024)
+
+1. Menambahkan tulisan alert :v
 
 ### Patch Update (19/10/2024)
 

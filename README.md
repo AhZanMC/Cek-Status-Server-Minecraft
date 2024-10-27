@@ -1,6 +1,9 @@
 ## CEK STATUS SERVER MINECRAFT
 
-[Changelog](Changelog.md) | [Cara Menggunakan](#cara-menggunakan) | [Creator](#creator)
+![Creator](https://img.shields.io/badge/Author-AhZanMC-yellow)
+[![Generic badge](https://img.shields.io/badge/Release-version1-purple.svg)](https://shields.io/)
+
+[Home](README.md) | [Changelog](Changelog.md) | [Cara Menggunakan](#cara-menggunakan) | [Creator](#creator)
 
 Repository ini berisi tentang website yang dapat menampilkan status server Minecraft itu aktif atau tidak dengan menggunakan API [Minecraft Server Status](https://mcsrvstat.us/)
 
