@@ -28,13 +28,23 @@ async function getServerStatus() {
     const ip = ipInput.value;
     const port = portInput.value;
 
-    // Panggil API Minecraft
+    // Panggil API Minecraft (sekaligus ukur response time)
+    const startTime = performance.now();
     const response = await fetch(`https://api.mcsrvstat.us/bedrock/3/${ip}:${port}`);
     // Uraikan respon JSON jadi objek javascript yang bisa kamu gunakan
     const data = await response.json();
+    const responseTime = Math.round(performance.now() - startTime);
 
     if (data.online) {
         // Jika Server Online
+
+        // Susun daftar nama player online (kalau server menampilkan list-nya)
+        let playerListHtml = "";
+        if (data.players.list && data.players.list.length > 0) {
+            const names = data.players.list.map(p => p.name_clean || p.name).join(", ");
+            playerListHtml = `Player Online : ${names}<br>`;
+        }
+
         document.getElementById("server-status").innerHTML = `
             <img src="https://api.mcsrvstat.us/icon/${ip}:${port}" alt="server_icon" height="64" width="64">
             <p class="card-text text-dark">
@@ -43,9 +53,14 @@ async function getServerStatus() {
                 IP : ${data.hostname}<br>
                 Port : ${data.port}<br>
                 Status : ONLINE<br>
+                EULA Blocked : ${data.eula_blocked ? "Ya" : "Tidak"}<br>
+                Gamemode : ${data.gamemode || "-"}<br>
                 Players : ${data.players.online} / ${data.players.max}<br>
+                ${playerListHtml}
                 Server Software : ${data.software}<br>
                 Version : ${data.version}<br>
+                Protocol : ${data.protocol ? data.protocol.version : "-"}<br>
+                Response Time : ${responseTime} ms<br>
             </p>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
@@ -65,6 +80,7 @@ async function getServerStatus() {
                 Status : OFFLINE<br>
                 Server Software : ${data.software}<br>
                 Version : ${data.version}<br>
+                Response Time : ${responseTime} ms<br>
             </p>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
