@@ -2,6 +2,17 @@
 
 [Home](README.md) | [Changelog](Changelog.md) | [Cara Menggunakan](README.md#cara-menggunakan) | [Creator](README.md#creator)
 
+### Patch Update (15/9/2026)
+
+1. Memperbaiki halaman yang tidak bisa di-scroll akibat konflik style dengan class `.container`
+2. Menambahkan informasi "Response Time" saat pengecekan status server
+3. Menambahkan informasi "EULA Blocked" pada hasil pengecekan server
+4. Menambahkan daftar nama player yang sedang online (jika server mengizinkan)
+5. Menambahkan informasi "Protocol" pada hasil pengecekan server
+6. Menambahkan informasi "Gamemode" khusus untuk server Bedrock
+7. Menambahkan daftar "Plugins" khusus untuk server Java (jika query server diaktifkan)
+8. Memperbarui README agar sesuai dengan fitur-fitur terbaru
+
 ### Patch Update (27/10/2024)
 
 1. Menambahkan tulisan alert :v

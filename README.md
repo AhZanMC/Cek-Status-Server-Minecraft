@@ -66,4 +66,4 @@ Berbagi ilmu itu penting, karena masih banyak yang ingin membangun website tapi 
 
 **!!! Warning !!!**
 
-Repository ini hanya untuk sekadar belajar atau digunakan pada website kamu sendiri. **Dilarang keras** mengakuinya sebagai karya sendiri, apalagi sampai memperjualbelikannya.
+Repository ini dibagikan gratis untuk siapa aja yang mau belajar atau pakai buat website sendiri. Mau di-clone, dimodif, atau kebetulan ada yang bikin mirip, nggak masalah. Yang dilarang keras cuma satu, jangan sampai repository atau kode ini diperjualbelikan, karena ini aku kasih dengan ikhlas dan gratis.
