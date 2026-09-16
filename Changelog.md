@@ -2,6 +2,10 @@
 
 [Home](README.md) | [Changelog](Changelog.md) | [Cara Menggunakan](README.md#cara-menggunakan) | [Creator](README.md#creator)
 
+### Patch Update (16/9/2026)
+
+1. Menambahkan metadata :v
+
 ### Patch Update (15/9/2026)
 
 1. Memperbaiki halaman yang tidak bisa di-scroll akibat konflik style dengan class `.container`
